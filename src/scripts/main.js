@@ -2,6 +2,20 @@ document.addEventListener('DOMContentLoaded', function(){
     const buttons = document.querySelectorAll('[data-tab-button]');
     const questions = document.querySelectorAll('[data-faq-question]');
 
+    const heroSection = document.querySelector('.hero');
+    const heroHeight = heroSection.clientHeight;
+
+    window.addEventListener('scroll', function(){
+        const scrollPosition = window.scrollY;
+        
+        if(scrollPosition < heroHeight){
+            hideHeader();
+        }else{
+            showHeader();
+        }
+    })
+
+    //Sections shows, tabs programming
     for (let i = 0; i < buttons.length; i++){
         buttons[i].addEventListener('click', function(btn){
             const tabTarget = btn.target.dataset.tabButton;
@@ -13,10 +27,21 @@ document.addEventListener('DOMContentLoaded', function(){
         })
     }
 
+    //FAQ section, accordion
     for (let i = 0; i < questions.length; i++){
         questions[i].addEventListener('click', openOrCloseQuestion);
     }
 })
+
+function hideHeader(){
+    const header = document.querySelector('header');
+    header.classList.add('header--is-hidden');
+}
+
+function showHeader(){
+    const header = document.querySelector('header');
+    header.classList.remove('header--is-hidden');
+}
 
 function openOrCloseQuestion(element){
     const classes = 'faq__questions__item--is-open';
