@@ -50,12 +50,24 @@ li{
 .text{
     @include text;
 
+    @media (max-width: 768px){
+        @include text(14px);
+    }
+
     &--big{
     @include text(18px);
+    
+    @media (max-width: 768px){
+        @include text(15px);
     }
+}
 
     &--small{
         @include text(12px);
+    
+    @media (max-width: 768px){
+        @include text(11px);
+    }
     }
 
     &--link{
@@ -68,12 +80,24 @@ li{
 .title{
     @include title;
 
+    @media (max-width: 768px){
+        @include title(24px);
+    }
+
     &--big{
         @include title(44px);
+
+        @media (max-width: 768px){
+        @include title(26px);
+    }
     }
 
     &--small{
         @include title(28px);
+
+        @media (max-width: 768px){
+        @include title(22px);
+    }
     }
 }
 
