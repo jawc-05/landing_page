@@ -5,6 +5,7 @@
 @use 'img-text-section';
 @use 'available-devices';
 @use 'faq';
+@use 'footer';
 
 @font-face{
     font-family: Avenir;
@@ -27,6 +28,10 @@
 
 body{
     background-color: variables.$bgColor;
+}
+
+li{
+    list-style-type: none;
 }
 
 @mixin text($fontSize: 16px){
