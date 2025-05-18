@@ -2,7 +2,8 @@
 @use 'hero';
 @use 'shows';
 @use 'plans';
-@use 'watch-anywhere';
+@use 'img-text-section';
+@use 'available-devices';
 
 @font-face{
     font-family: Avenir;
@@ -81,3 +82,4 @@ body{
     margin-bottom: 8px;
     cursor: pointer;
 }
+
